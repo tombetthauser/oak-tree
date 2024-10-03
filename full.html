@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Oak Tree</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(97, 112, 87); /* Example background color */
+        }
+
+        html, body {
+            height: 100%;
+            background-color: rgb(97, 112, 87); /* Example background color */
+        }
+
+        #full-screen-div {
+            height: 100vh; /* Full height of the viewport */
+            width: 100vw;  /* Full width of the viewport */
+            background-color: rgb(97, 112, 87); /* Example background color */
+            background-image: url('./images/IMG_7339.jpg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="full-screen-div"></div>
+</body>
+<script>
+    const IMG_URLS = [
+        "./images/IMG_7339.jpg",
+        "./images/IMG_7340.jpg",
+        "./images/IMG_7343.jpg",
+        "./images/IMG_7345.jpg",
+        "./images/IMG_7346.jpg",
+        "./images/IMG_7347.jpg",
+        "./images/IMG_7348.jpg",
+        "./images/IMG_7352.jpg",
+        "./images/IMG_7353.jpg",
+        "./images/IMG_7354.jpg",
+        "./images/IMG_7355.jpg",
+        "./images/IMG_7356.jpg",
+        "./images/IMG_7357.jpg",
+        "./images/IMG_7358.jpg",
+        "./images/IMG_7359.jpg",
+        "./images/IMG_7360.jpg",
+        "./images/IMG_7361.jpg",
+        "./images/IMG_7362.jpg",
+        "./images/IMG_7363.jpg",
+        "./images/IMG_7364.jpg",
+        "./images/IMG_7365.jpg",
+        "./images/IMG_7366.jpg",
+        "./images/IMG_7367.jpg",
+        "./images/IMG_7368.jpg",
+        "./images/IMG_7370.jpg",
+        "./images/IMG_7371.jpg",
+        "./images/IMG_7372.jpg",
+        "./images/IMG_7373.jpg",
+        "./images/IMG_7374.jpg",
+        "./images/IMG_7375.jpg",
+        "./images/IMG_7377.jpg",
+        "./images/IMG_7378.jpg",
+        "./images/IMG_7379.jpg",
+        "./images/IMG_7382.jpg",
+        "./images/IMG_7383.jpg",
+        "./images/IMG_7384.jpg",
+    ]
+
+    let currPageIdx = 0;
+
+    const primaryDiv = document.querySelector("#full-screen-div");
+
+    primaryDiv.addEventListener('click', () => {
+        // currPageIdx = (currPageIdx + 1) % IMG_URLS.length;
+        currPageIdx = currPageIdx + 1;
+        const newUrl = IMG_URLS[currPageIdx];
+        primaryDiv.style.backgroundImage = `url("${IMG_URLS[currPageIdx]}")`;
+        if (currPageIdx >= IMG_URLS.length) {
+            window.location.replace("./index.html")
+        }
+    })
+</script>
+</html>
